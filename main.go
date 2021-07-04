@@ -22,6 +22,7 @@ func main() {
 	r.DELETE("/products/:id", productRepo.DeleteProduct)
 	userRepo := userController.New()
 	//user routes
+	// add jwt authentication
 	r.GET("/users", userRepo.GetUsers)
 	r.GET("/users/:id", userRepo.GetUser)
 	r.POST("/signup", userRepo.Signup)
