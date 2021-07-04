@@ -24,7 +24,6 @@ func main() {
 	//user routes
 	r.GET("/users", userRepo.GetUsers)
 	r.GET("/users/:id", userRepo.GetUser)
-	r.POST("/users", userRepo.CreateUser)
 	r.POST("/signup", userRepo.Signup)
 	r.PUT("/users/:id", userRepo.UpdateUser)
 	r.DELETE("/users/:id", userRepo.DeleteUser)
