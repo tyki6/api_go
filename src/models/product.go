@@ -2,12 +2,15 @@ package models
 
 import (
 	"gorm.io/gorm"
+	"time"
 )
 
 type Product struct {
-	Id    int     `form:"name" json:"name"`
+	Id    int     `gorm:"primaryKey" form:"id" json:"id"`
 	Name  string  `form:"name" json:"name" binding:"required"`
 	Price float32 `form:"price" json:"price" binding:"required"`
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 func CreateProduct(db *gorm.DB, Product *Product) (err error) {
